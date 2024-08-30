@@ -1,0 +1,30 @@
+
+
+    <div class="bar-search-govco col-12">
+        <div class="govco-search-basic">
+            <div class="container-govco d-flex" id="containter-default">
+                <input type="text" class="input-search-basic-govco" id="input-basic" [formControl]="searchControl"
+                    [placeholder]="placeholder" aria-label="buscar por componente" />
+
+                <!-- Botón para limpiar el campo de búsqueda -->
+                <button class="btn-clean-basic-govco me-2" type="button" id="btn-clean-basic" aria-label="Limpiar"
+                    (click)="searchControl.reset()">
+                    <span class="govco-svg govco-times"></span>
+                </button>
+
+                <div class="line-basic-govco"></div>
+
+                <!-- Botón de búsqueda -->
+                <button class="btn-search-basic-govco" type="button">
+                    <span class="govco-svg govco-search" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+        <!-- Indicador de carga -->
+         <div class="m-2">
+            <div *ngIf="isLoading" class="loading-bar-background"></div>
+            <div *ngIf="isLoading" class="loading-bar"></div>
+        </div>
+    </div>
+
+  

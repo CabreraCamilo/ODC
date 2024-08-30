@@ -1,0 +1,42 @@
+{
+    "DATA_BANDEJA": [
+        {
+            "title": "...",
+            "link": "",
+            "alt": "...",
+            "ruta": "https://www.minjusticia.gov.co/programas-co/ODC/Sliders/apliacip%C3%B3n-banner-2024.png"
+        },
+        {
+            "title": "...",
+            "link": "",
+            "alt": "...",
+            "ruta": "https://www.minjusticia.gov.co/programas-co/ODC/Sliders/banner%20fentanilo_web.jpg"
+        },
+        {
+            "title": "...",
+            "link": "",
+            "alt": "...",
+            "ruta": "https://www.minjusticia.gov.co/programas-co/ODC/Sliders/Banner%20lanzamiento%20Pol%C3%ADtica%20de%20Drogas%202023-2033.png"
+        },
+        {
+            "title": "...",
+            "link": "",
+            "alt": "...",
+            "ruta": "https://www.minjusticia.gov.co/programas-co/ODC/Sliders/BannerEscolares.jpeg"
+        }
+    ],
+    "DATA_SUBSITIO": [
+        {
+            "title": "...",
+            "link": "",
+            "alt": "...",
+            "ruta": "https://www.minjusticia.gov.co/programas-co/ODC/Sliders/apliacip%C3%B3n-banner-2024.png"
+        },
+        {
+            "title": "...",
+            "link": "",
+            "alt": "...",
+            "ruta": "https://www.minjusticia.gov.co/programas-co/ODC/Sliders/banner%20fentanilo_web.jpg"
+        }
+    ]
+}

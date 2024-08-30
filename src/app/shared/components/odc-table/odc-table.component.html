@@ -1,0 +1,28 @@
+
+<ng-container *ngIf="datosTabla.length; else noData">
+  <div class="table-responsive tabla-govco">
+    <table class="not-active-rows not-accented-rows">
+      <odc-table-header [columns]="config.columns" (sort)="onSort($event)"></odc-table-header>
+      <odc-table-body
+        [data]="itemsToShow"
+        [columns]="config.columns"
+        [actionsConfig]="config.actionsConfig"
+        (actionClick)="accionClick.emit($event)"
+        [uniqueIdentifier]="config.uniqueIdentifier"
+        [rowClassFn]="config.rowClasses"
+        [rowActionsFn]="config.rowActions"
+        [showCounter]="config.showCounter"
+        [widthOptions]="config.widthOptions"
+      ></odc-table-body>
+    </table>
+    
+  </div>
+  <odc-paginator *ngIf="config.pagination" [totalCount]="datosTabla.length" [pageSize]="config.itemsPerPage" (pageChange)="onPageChange($event)"></odc-paginator>
+</ng-container>
+  
+  <ng-template #noData>
+    <div class="alert alert-warning">
+      No hay datos disponibles para mostrar.
+    </div>
+  </ng-template>
+  

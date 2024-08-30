@@ -1,0 +1,35 @@
+<!-- TITULO -->
+<div class="d-flex flex-column pt-2">
+    <h3 class="govcolor-cobalt text-center">
+        {{ messagesComponent.headerTitle }}
+    </h3>
+    <div class="container">
+        <p>
+            {{ messagesComponent.headerDescription }}
+        </p>
+    </div>
+
+    <!-- TABLA -->
+    <div class="container card border-0">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <odc-export-excel [columns]="tableConfig.columns" [data]="lstEntidades"
+                        fileName="indicadores.xlsx">
+                    </odc-export-excel>
+                </div>
+                <div class="col-6 d-flex flex-row justify-content-end flex-wrap">
+                    <odc-bar-search class="col-12" [placeholder]="'Escribe una palabra para buscar'"
+                        (search)="receiveData($event)"></odc-bar-search>
+                </div>
+            </div>
+
+            <div class="mt-0">
+                <odc-table [datosTabla]="lstEntidades" [config]="tableConfig"
+                    (accionClick)="handleAccionClick($event)">
+                </odc-table>
+            </div>
+        </div>
+    </div>
+
+</div>

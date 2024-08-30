@@ -1,0 +1,122 @@
+<a *ngIf="gestionComponte.tipo==1" class="tarjeta-govco horizontal-tarjeta-govco custom-card"
+    [href]="gestionComponte.ruta == null ? 'javascript:void()' : gestionComponte.ruta" [title]="gestionComponte.titulo"
+    target="_blank">
+
+    <div class="card-image">
+        <img [src]="gestionComponte.imagen" [alt]="gestionComponte.alt">
+    </div>
+    <div class="card-content scrollable-content mt-2 mb-2">
+        <strong>
+            <h6>{{gestionComponte.titulo}}</h6>
+        </strong>
+
+        <div class="row govcolor-black" *ngIf="gestionComponte.contenido">
+            <div class="col-12">
+                <p>{{gestionComponte.contenido}} </p>
+            </div>
+        </div>
+
+        <div class="info-container govcolor-black">
+            <!-- Autor -->
+            <div *ngIf="gestionComponte.autor" class="info-item">
+                <p><strong>Autor:</strong> {{gestionComponte.autor}}</p>
+            </div>
+
+            <!-- Contador Vistas -->
+            <div *ngIf="gestionComponte.vistas" class="info-item">
+                <p><strong>Contador Vistas:</strong> {{gestionComponte.vistas}}</p>
+            </div>
+
+            <!-- Año -->
+            <div *ngIf="gestionComponte.year" class="info-item">
+                <p><strong>Año:</strong> {{gestionComponte.year}}</p>
+            </div>
+
+            <!-- Tipo publicación -->
+            <div *ngIf="gestionComponte.tipoPublica" class="info-item">
+                <p><strong>Tipo publicación:</strong> {{gestionComponte.tipoPublica}}</p>
+            </div>
+
+            <!-- Temática -->
+            <div *ngIf="gestionComponte.tematica" class="info-item">
+                <p><strong>Temática:</strong> {{gestionComponte.tematica}}</p>
+            </div>
+
+            <!-- Etiqueta -->
+            <div *ngIf="gestionComponte.etiqueta" class="info-item">
+                <p><strong>Etiqueta:</strong> {{gestionComponte.etiqueta}}</p>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row gap-3 mt-2">
+            <button type="button" class="btn-govco fill-btn-govco icon-btn-govco" (click)="compartir($event)">
+                <span class="govco-svg govco-share-alt" aria-hidden="true"></span>
+                <span>Compartir</span>
+            </button>
+        </div>
+
+
+    </div>
+</a>
+
+
+<a *ngIf="gestionComponte.tipo==2" class="tarjeta-govco horizontal-tarjeta-govco custom-card"
+    [href]="gestionComponte.ruta == null ? 'javascript:void()' : gestionComponte.ruta" [title]="gestionComponte.titulo"
+    target="_blank">
+
+    <div class="card-image">
+        <img [src]="gestionComponte.imagen" [alt]="gestionComponte.alt">
+    </div>
+    <div class="card-content scrollable-content">
+        <strong>
+            <h6>{{gestionComponte.titulo}}</h6>
+        </strong>
+
+        <div class="row govcolor-black" *ngIf="gestionComponte.contenido">
+            <div class="col-12">
+                <p>{{gestionComponte.contenido}} </p>
+            </div>
+        </div>
+
+        <div class="row govcolor-black" *ngIf="gestionComponte.autor || gestionComponte.vistas">
+            <div class="col-6" *ngIf="gestionComponte.autor">
+                <p><strong>Autor:</strong> {{gestionComponte.autor}}</p>
+            </div>
+            <div class="col-6" *ngIf="gestionComponte.vistas">
+                <p><strong>Contador Vistas:</strong> {{gestionComponte.vistas}}</p>
+            </div>
+        </div>
+
+        <div class="row govcolor-black" *ngIf="gestionComponte.year || gestionComponte.tipoPublica">
+            <div class="col-6" *ngIf="gestionComponte.year">
+                <p><strong>Año:</strong> {{gestionComponte.year}}</p>
+            </div>
+            <div class="col-6" *ngIf="gestionComponte.tipoPublica">
+                <p><strong>Tipo publicación:</strong> {{gestionComponte.tipoPublica}}</p>
+            </div>
+        </div>
+
+        <div class="row govcolor-black" *ngIf="gestionComponte.tematica || gestionComponte.etiqueta">
+            <div class="col-6" *ngIf="gestionComponte.tematica">
+                <p><strong>Temática:</strong> {{gestionComponte.tematica}}</p>
+            </div>
+            <div class="col-6" *ngIf="gestionComponte.etiqueta">
+                <p><strong>Etiqueta:</strong> {{gestionComponte.etiqueta}}</p>
+            </div>
+        </div>
+
+        <div class="d-flex flex-row gap-3">
+            <button type="button" class="btn-govco fill-btn-govco icon-btn-govco" (click)="compartir($event)">
+                <span class="govco-svg govco-share-alt" aria-hidden="true"></span>
+                <span>Compartir</span>
+            </button>
+        </div>
+    </div>
+</a>
+
+<a *ngIf="gestionComponte.tipo==3" [id]="gestionComponte.id ? gestionComponte.id : null" class="icono-tarjeta-govco"
+    href="javascript:void()" title="descripción donde redirige el enlace" (click)="onClick()" [ngClass]="{'active-car': gestionComponte.preSelect}">
+    <div>
+        <img [src]="gestionComponte.imagen" alt="general" class="img-fluid p-1">
+    </div>
+</a>

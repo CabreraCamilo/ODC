@@ -1,0 +1,28 @@
+<div class="container-modal-govco">
+    <div class="modal-container-govco" aria-hidden="true" role="dialog">
+      <div class="modal-dialog modal-dialog-govco">
+        <div class="modal-content modal-content-govco" style="box-shadow: none;">
+          <div class="modal-header modal-header-govco modal-header-alerts-govco">
+            <button type="button" disabled class="btn-close btn-close-white" data-bs-dismiss="modal"
+              aria-label="Close" (click)="closeModal()"></button>
+          </div>
+          <div class="modal-body modal-body-govco center-elements-govco">
+            <div class="modal-icon">
+              <span class="modal-icon-govco modal-warning-icon"></span>
+            </div>
+            <h3 class="modal-title-govco warning-govco">{{ config.title }}</h3>
+            <h3 class="modal-subtitle-govco modal-text-center-govco">{{ config.subtitle }}</h3>
+            <p class="modal-text-govco">
+              {{config.content}}
+            </p>
+          </div>
+          <div *ngIf="config.buttons" class="modal-footer-govco modal-footer-alerts-govco"  [class.mx-auto]="config.buttons.length < 2">
+            <div class="modal-buttons-govco">
+              <button *ngFor="let button of config.buttons" type="button" [ngClass]="button.className || 'btn-primary btn-modal-govco'" (click)="button.onClick ? button.onClick() : null; closeModal()">{{ button.text }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

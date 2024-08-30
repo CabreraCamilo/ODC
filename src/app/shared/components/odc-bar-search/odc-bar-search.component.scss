@@ -1,0 +1,185 @@
+.bar-search-govco {
+    position: relative;
+    overflow: hidden;
+    padding: 4px;
+}
+
+.loading-bar-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #d3d3d3;
+}
+
+.loading-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #3366CC;
+
+    width: 0;
+
+    animation: loading 2s linear infinite;
+
+    @keyframes loading {
+        0% {
+            left: 0;
+            width: 0;
+        }
+
+        100% {
+            left: 100%;
+            width: 100%;
+        }
+    }
+}
+
+
+.container-govco {
+    height: 2.625rem;
+    background-color: var(--govcolor-white);
+    border: 0.125rem solid var(--govcolor-cobalt);
+    border-radius: 1.5rem;
+    width: 100%;
+    align-items: center;
+    padding-right: 2px;
+}
+
+.container-govco.active {
+    outline-offset: 0.125rem;
+    outline: 0.125rem solid var(--govcolor-black);
+}
+
+.govco-search-basic .btn-search-basic-govco,
+.govco-search-predictive .btn-search-predictive-govco {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.govco-search-basic .govco-svg.govco-search,
+.govco-search-predictive .govco-svg.govco-search {
+    background-image: url(../../../../assets/icons/search.svg);
+    min-width: 1rem;
+    min-height: 1rem;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    filter: var(--govcolor-svg-white);
+}
+
+.govco-search-basic .govco-svg.govco-times,
+.govco-search-predictive .govco-svg.govco-times {
+    background-image: url(../../../../assets/icons/times.svg);
+    min-width: 1.125rem;
+    min-height: 1.125rem;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+    filter: var(--govcolor-svg-cobalt);
+}
+
+.govco-search-basic .govco-svg.govco-times:hover,
+.govco-search-predictive .govco-svg.govco-times:hover {
+    filter: var(--govcolor-svg-tropical-blue);
+}
+
+/* ==================================Buscador Basico ==================================================*/
+
+.govco-search-basic {
+    height: 2.625rem;
+    width: -webkit-fill-available;
+}
+
+.govco-search-basic input[type=text].input-search-basic-govco {
+    border: none;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    width: -webkit-fill-available;
+    height: 2.35rem;
+    padding-left: 1.25rem;
+    text-align: left;
+    color: var(--govcolor-matterhorn);
+    font-weight: normal;
+    letter-spacing: 0rem;
+    font-size: 0.938rem;
+    margin: 0rem;
+    box-shadow: none;
+}
+
+.govco-search-basic input[type=text].input-search-basic-govco::placeholder {
+    color: var(--govcolor-matterhorn);
+}
+
+.govco-search-basic .btn-clean-basic-govco {
+    border: none;
+    background: var(--govcolor-white);
+    height: 2.35rem;
+}
+
+.govco-search-basic .btn-search-basic-govco {
+    border: none;
+    background: var(--govcolor-cobalt);
+    height: 2.25rem;
+    border-radius: 50% !important;
+    width: 2.36rem;
+    margin-left: 0.375rem;
+}
+
+.line-basic-govco {
+    height: 1.875rem;
+    width: 0;
+    border: 1px solid var(--govcolor-grey);
+}
+
+.govco-search-basic input[type=text].input-search-basic-govco:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.container-govco.disabled {
+    border: 1px solid var(--govcolor-silver);
+    background-color: var(--govcolor-white);
+}
+
+.govco-search-basic input[type=text].input-search-basic-govco:disabled {
+    color: var(--govcolor-silver);
+    background-color: var(--govcolor-white);
+}
+
+.govco-search-basic input[type=text].input-search-basic-govco:disabled::placeholder {
+    color: var(--govcolor-silver);
+}
+
+.govco-search-basic .btn-search-basic-govco:disabled {
+    background: var(--govcolor-silver);
+}
+
+.govco-search-basic .btn-clean-basic-govco,
+.govco-search-basic .line-basic-govco {
+    display: none;
+}
+
+.govco-search-basic .btn-clean-basic-govco.active,
+.govco-search-basic .line-basic-govco.active {
+    display: block;
+}
+
+.govco-search-basic .btn-search-basic-govco.disabled {
+    background-color: var(--govcolor-silver);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.govco-search-basic-govco:disabled {
+    background: var(--govcolor-white);
+    color: var(--govcolor-silver);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* =========================FIN BUSCADOR BASICO============================ */

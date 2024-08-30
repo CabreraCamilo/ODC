@@ -1,0 +1,65 @@
+<div class="content-tab">
+    <h3 class="govcolor-cobalt text-center">EJES TEJEDORES</h3>
+    <p>La política de Drogas contiene tres ejes Tejedores que funcionan como puntos de convergencia de componentes
+        estratégicos de los pilares Oxigeno y Asfixia. Sus prioridades son transformar narrativas estigmatizantes e
+        implementar medidas de justicia social en favor de los grupos desproporcionadamente afectados por el
+        narcotráfico y avanzar en la regulación de mercados como el cannabis de uso adulto y los usos no psicoactivos de
+        la hoja de coca.</p>
+
+
+    <div class="row mt-1">
+        <div class="col-4"><app-tarjetas [gestionComponte]="regulacion"
+                (tarjetaClick)="escucharTarjeta(1)"></app-tarjetas> </div>
+        <div class="col-4"><app-tarjetas [gestionComponte]="narrativas"
+                (tarjetaClick)="escucharTarjeta(2)"></app-tarjetas></div>
+        <div class="col-4"><app-tarjetas [gestionComponte]="diplomaCambio"
+                (tarjetaClick)="escucharTarjeta(3)"></app-tarjetas></div>
+    </div>
+    <hr>
+
+    <div class="row mt-1">
+        <div class="col-12" *ngIf="tarjetaSeleccionada==1">
+            <h3 class="govcolor-cobalt">¿Cómo se va a crear una regulación justa y responsable?​</h3>
+            <div class="text-center">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/JustaYrespons.jpg" class="img-fluid"
+                    alt="¿Cómo se va a crear una regulación justa y responsable?">
+
+            </div>
+
+        </div>
+        <div class="col-12" *ngIf="tarjetaSeleccionada==2">
+            <h3 class="govcolor-cobalt">¿En qué consiste el cambio en las narrativas?</h3>
+            <div class="text-center">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/CambioNarra.jpg"
+                    class="img-fluid" alt="¿En qué consiste el cambio en las narrativas?">
+            </div>
+
+        </div>
+        <div class="col-12" *ngIf="tarjetaSeleccionada==3">
+            <h3 class="govcolor-cobalt">DIPLOMACIA INTERNACIONAL PARA EL CAMBIO</h3>
+            <p>
+                <em>"La Política Nacional de Drogas parte de la premisa que el mercado de las drogas es un fenómeno
+                    transnacional y, por tanto, en línea con el principio de responsabilidad común y compartida, todos
+                    los países deberán tomar parte en el compromiso al enfrentar los problemas asociados a este mercado,
+                    para que los mayores costos y consecuencias no recaigan sobre los países productores y de
+                    tránsito.</em><br><br><em> Colombia hace un llamado a la comunidad internacional para que apoye y
+                    acompañe sus esfuerzos para poner fin definitivo a un conflicto armado de más de medio siglo, el
+                    cual ha estado profundamente ligado al fenómeno del narcotráfico. Como nación, requerimos de una
+                    política de drogas que permita al país vivir en paz, situando a los seres humanos y al ambiente en
+                    el centro de las acciones del Estado."</em>
+            </p>
+
+            <p class="govcolor-cobalt">
+                <span>Promoviendo una
+                    reflexión global, estructural y critica frente a los resultados del paradigma internacional para
+                    enfrentar los problemas asociados a las drogas.</span>
+            </p>
+
+            <div class="text-center">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/Paradigma.jpg"
+                    class="img-fluid" alt="Paradigma">
+                <br>
+            </div>
+        </div>
+
+    </div>

@@ -1,0 +1,22 @@
+.navbar-nav {
+    margin: 0 auto !important;
+
+    .nav-item:not(:last-child) {
+        margin-right: 20px !important;
+    }
+
+    .clase-dos {
+        width: 10.1rem !important;
+    }
+}
+
+.navbar-pestana-govco .nav-link {
+    
+    width: 10.1rem !important;
+    text-align: center !important;
+    color: white !important;
+
+    p {
+        padding-top: 10px !important;
+    }
+}

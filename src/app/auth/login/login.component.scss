@@ -1,0 +1,43 @@
+
+  html {
+    font-size: 100%;
+  }
+  
+  .login-label-govco strong {
+    color: #000 !important;
+    font-family: Nunito_Sans-Regular !important;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5rem;
+  }
+  
+  .inicio-sesion-govco {
+    width: 28.75rem;
+    min-height: 40.063rem;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0 0.25rem 0 #3366CC24;
+    border-radius: 0.625rem;
+    opacity: 1;
+    padding: 2.5rem 2.5rem 2.813rem 2.5rem;
+  }
+  
+  .inicio-sesion-govco h2 {
+    color: #004884;
+    font-family: Nunito_Sans-Regular;
+    font-size: 2rem;
+    margin: 0;
+    line-height: 2.875rem;
+  }
+  
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .inicio-sesion-govco {
+      width: 20.5rem;
+      padding: 1.875rem 1rem 1.813rem 1rem;
+    }
+  
+    .inicio-sesion-govco .container-radio-login-govco {
+      margin-left: 0.3rem;
+    }
+  }
+  

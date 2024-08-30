@@ -1,0 +1,25 @@
+<div class="dropdown desplegable-govco">
+    <label *ngIf="label" [for]="dropdownId">{{ label }}</label>
+    <div class="container-dropdown">
+        <input type="hidden" [value]="getOptionId(selectedOption)"
+            [attr.aria-invalid]="control?.invalid && (control?.dirty || control?.touched)" aria-describedby="alert-id">
+        <button class="btn-dropdown" type="button" [id]="dropdownId" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ getOptionName(selectedOption) || placeholder }}
+        </button>
+        <div class="input-group icons-dropdown">
+            <span class="input-group-text govco-icon govco-angle-down"></span>
+        </div>
+        <div class="dropdown-menu dropdown-options-govco" [attr.aria-labelledby]="dropdownId">
+            <ul>
+                <li tabindex="0" class="dropdown-item" *ngFor="let option of options" (click)="onSelect(option)">
+                    {{ getOptionName(option) }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Componente de mensajes de error -->
+    <div *ngIf="control" class="entradas-de-texto-govco mt-1">
+        <odc-form-error-messages [control]="control"></odc-form-error-messages>
+    </div>
+</div>

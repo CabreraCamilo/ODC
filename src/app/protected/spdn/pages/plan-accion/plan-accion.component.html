@@ -1,0 +1,66 @@
+<!-- TITULO -->
+<div class="d-flex flex-column pt-2">
+  <h3 class="govcolor-cobalt text-center">
+    {{ messagesComponent.headerTitle }}
+  </h3>
+</div>
+
+<div class="container card mb-4">
+  <div class="carga-archivo-govco">
+
+    <!-- DECARGA DEL ARCHIVO -->
+    <a *ngIf="fileSaved" class="d-flex justify-content-center mb-4" href="javascript:void(0) ">
+      <span class="govco-svg govco-file-excel govcolor-havelock-lue"></span>
+      <span class="govco-text">Descargar plantilla de cargue</span>
+    </a>
+
+    <odc-file-upload [config]="config" (fileSelected)="onFileSelected($event)" (fileUploaded)="onFilesUploaded($event)"
+      (errorOccurred)="onErrorOccurred($event)" (saved)="isFileSaved($event)">
+    </odc-file-upload>
+
+    <!-- Alerta Emergente Positiva -->
+    <ng-container *ngFor="let msg of messageSuccess; let i = index">
+      <div class="container-alerta-govco">
+        <div class="alert alerta-govco notificacion-success-govco" role="alert">
+          <span class="govco-svg govco-check-circle fs-mr" aria-label="success"></span>
+          <p>{{ msg }}</p>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Alerta Emergente Negativa -->
+    <ng-container *ngFor="let msg of messageError; let i = index">
+      <div class="container-alerta-govco">
+        <div class="alert alerta-govco notificacion-error-govco" role="alert">
+          <span class="govco-icon govco-times-cancel fs-mr" aria-label="error"></span>
+          <p>{{ msg }}</p>
+        </div>
+      </div>
+    </ng-container>
+
+
+    <!-- Notificación Tipo Tostada Negativa -->
+    <ng-container *ngIf="messageErrorFile.length > 0">
+      <div class="toast container-toast-govco error show" id="fixedtoast" data-autohide="false" role="alert"
+        aria-live="assertive" aria-atomic="true">
+        <div class="toast-header toast-header-error-govco">
+          <span class="govco-icon govco-times-cancel fs-mr" aria-label="info"></span>
+          <strong class="me-auto toast-title-govco">Notificación</strong>
+          <a href="javascript:void(0)" data-bs-dismiss="modal" class="close-btn-toast" aria-label="Close"
+            aria-expanded="false" (click)="closeAlert()">
+            <span class="govco-icon govco-times error"></span>
+          </a>
+        </div>
+        <div class="toast-body toast-body-govco">
+          <p class="mb-4">
+            Se encontraron los siguientes errores en el archivo, por favor corrijalos e intente nuevamente.
+          </p>
+          <ng-container *ngFor="let msg of messageErrorFile; let i = index">
+            <p>{{ msg }}</p>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+</div>

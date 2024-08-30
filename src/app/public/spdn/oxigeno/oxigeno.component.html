@@ -1,0 +1,115 @@
+<div class="content-tab">
+    <h3 class="govcolor-cobalt text-center">OXÍGENO</h3>
+    <p>
+        Las acciones dirigidas a dar <strong>OXÍGENO</strong> se orientan a los territorios, comunidades, personas y
+        ecosistemas que sehan vistodesproporcionalmente afectados por el mercado de drogas ilegales. Las prioridades del
+        pilar son.
+    </p>
+
+
+    <div class="row mt-1">
+        <div class="col-3"><app-tarjetas [gestionComponte]="transitoLicito"
+                (tarjetaClick)="escucharTarjeta(1)"></app-tarjetas> </div>
+        <div class="col-3"><app-tarjetas [gestionComponte]="cuidadoAmbiente"
+                (tarjetaClick)="escucharTarjeta(2)"></app-tarjetas></div>
+        <div class="col-3"><app-tarjetas [gestionComponte]="vulnerabilidadDrogas"
+                (tarjetaClick)="escucharTarjeta(3)"></app-tarjetas></div>
+        <div class="col-3"><app-tarjetas [gestionComponte]="consumoSustancias"
+                (tarjetaClick)="escucharTarjeta(4)"></app-tarjetas></div>
+    </div>
+    <hr>
+
+    <div class="row mt-1">
+        <div class="col-12" *ngIf="tarjetaSeleccionada==1">
+
+            <h3 class="govcolor-cobalt">Tránsito a economías lícitas en zonas rurales y de manejo especial</h3>
+            <p>Para transformar los territorios se debe hacer un esfuerzo conjunto entre actores públicos, privados y
+                cooperantes para establecer mejores condiciones en los territorios y reivindicar los derechos humanos de
+                las comunidades que dependen de las economías ilícitas. Para esto se propone un modelo integral de
+                intervención para el tránsito a modelos autóctonos lícitos:</p>
+            <h3 class="govcolor-cobalt">Modelo integral de intervención para el tránsito a modelos autónomos lícitos</h3>
+            <div class="text-center">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/Modelointegral.png" class="img-fluid"
+                    alt="Modelo Integral">
+            </div>
+
+        </div>
+        <div class="col-12" *ngIf="tarjetaSeleccionada==2">
+            <h3 class="govcolor-cobalt">Cuidado ambiental de territorios afectados por la economía de las drogas
+                ilícitas</h3>
+            <p>El eje de cuidado ambiental va de la mano con en el eje de Tránsito a economías lícitas en zonas rurales
+                y de manejo especial, debido a las características de nuestro territorio y los procesos de zonificación.
+            </p>
+            <div class="text-center">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/ObjetivosEspecificos.jpg"
+                    class="img-fluid" alt="Objetivos Específicos">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/AccionesEstrategicas.jpg"
+                    class="img-fluid" alt="Acciones Estratégicas">
+            </div>
+
+        </div>
+        <div class="col-12" *ngIf="tarjetaSeleccionada==3">
+            <h2 class="govcolor-cobalt">Atención a población en condición de vulnerabilidad frente a mercados urbanos de
+                drogas</h2>
+            <h3 class="govcolor-cobalt">¿Cómo se planea dar atención a población en condición de vulnerabilidad frente a
+                los mercados locales de
+                drogas?</h3>
+            <div class="text-center">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/PrevencionVinculacion.png"
+                    alt="Prevención de la vinculación de jóvenes vulnerables" class="img-fluid">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/DerechoSancionatorio.png"
+                    alt="Apliccaión del derecho sancionatorio (proporcional)" class="img-fluid">
+            </div>
+            <h3 class="govcolor-cobalt">Para alcanzar los objetivos se crean las zonas de paz y esperanza para la
+                transformación y renovación
+                con oportunidades</h3>
+            <p>Principalmente para <strong>áreas urbanas y cabeceras minicipales para la reducción de las
+                    vulnerabilidades</strong> de
+                las personas en contextos de riesgo de vinculación a grupos criminales, <strong>la prevención de
+                    reclutamiento
+                    juvenil y uso de NNAJ</strong> por las organizaciones armadas ilegales o delincuenciales asociadas a
+                drogas.</p>
+
+            <p>
+                <strong>Deberán contar como mínimo con los siguientes elementos:</strong>
+            </p>
+
+            <div class="text-center">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/PlanesOperativos.jpg"
+                    class="img-fluid" alt="Planes Operativos">
+            </div>
+        </div>
+        <div class="col-12" *ngIf="tarjetaSeleccionada==4">
+            <p>
+                Consumo de sustancias psicoactivas desde el cuidado integral, la salud pública y los derechos humanos
+            </p>
+            <p>Contempla medidas y respuestas diferenciadas frente al fenómeno, desde una perspectiva integral e
+                integrada. Se propone alcanzar una visión multidimensional y multisectorial para intervenir las
+                situaciones de vulnerabilidad asociadas a las sustancias psicoactivas.
+            </p>
+            <p class="govcolor-cobalt">
+                <span>
+                    Un asunto fundamental es la prevención del consumo de sustancias psicoactivas en toda la población
+                    y, en
+                    especial, en niños, niñas y adolescentes. Igualmente, busca fortalecer la Atención Primaria en Salud
+                    en
+                    el entorno más cercano de las personas, mejorando las capacidades y oportunidades para el cuidado de
+                    la
+                    salud individual y colectiva, así como la intervención de los determinantes sociales.
+                </span>
+            </p>
+            <br>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10 ">
+                    <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/AccionesEstrategicas2.jpg"
+                        alt="enfoque" class="img-fluid">
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,42 @@
+<tbody class="contenido-tablas" role="rowgroup">
+    <tr role="row" *ngFor="let row of data; let i = index" [ngClass]="getRowClass(row)">
+      <td role="cell" *ngIf="showCounter">
+        {{ i + 1 }}
+      </td>
+      <ng-container *ngFor="let column of columns; trackBy: trackByFn" >
+        <td role="cell" [ngClass]="column.bodyClass" [style.width]="column.width" *ngIf="!column.omitInTdGeneration">
+          <ng-container [ngSwitch]="column.elementType">
+            <span *ngSwitchCase="'span'" [ngClass]="column.elementTypeClass">
+              {{ formatData(column, row[column.field]) }}
+            </span>
+            <p *ngSwitchCase="'p'" [ngClass]="column.elementTypeClass">
+              {{ formatData(column, row[column.field]) }}
+            </p>
+            <div *ngSwitchCase="'div'" [ngClass]="column.elementTypeClass">
+              {{ formatData(column, row[column.field]) }}
+            </div>
+            <ng-container *ngSwitchDefault>{{ formatData(column, row[column.field]) }}</ng-container>
+          </ng-container>
+        </td>
+      </ng-container>
+      <!-- <td role="cell" *ngIf="actionsConfig.length > 0">
+        <div class="me-2" *ngFor="let action of rowActionsFn ? rowActionsFn(row) : actionsConfig; let last = last">
+          <a (click)="handleAction(action.name, row)" role="button" class="me-1 link-tipografia-govco">{{ action.name }}</a>
+          <span *ngIf="!last" role="separator">/</span>
+        </div>
+      </td> -->
+
+      <td role="cell" [style.width.px]="widthOptions" *ngIf="actionsConfig.length > 0">
+        <div class="icon-container d-flex justify-content-center">
+        <div class="icon" *ngFor="let action of rowActionsFn ? rowActionsFn(row) : actionsConfig; let last = last">
+          <a (click)="handleAction(action.name, row)" role="button" class="me-1 link-tipografia-govco">
+            <span class="govco-svg {{ action.icon }}"></span>
+            <!-- <fa-icon [icon]="getIcon(action.name)"></fa-icon> {{ action.name }} -->
+          </a>
+        </div>
+      </div>
+      </td>
+
+    </tr>
+  </tbody>
+  

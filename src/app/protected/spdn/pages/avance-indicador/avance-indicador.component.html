@@ -1,0 +1,101 @@
+<!-- TITULO -->
+<div class="d-flex flex-column pb-2">
+
+    <button type="button" class="col-2 mt-3 btn-govco fill-btn-govco" (click)="closeAvence()">
+        <span class="govco-svg govco-arrow-left mr-2"></span>
+        <span class="mr-2">Regresar</span>
+    </button>
+
+    <h3 class="govcolor-cobalt text-center">
+        {{ messagesComponent.title }}
+    </h3>
+</div>
+
+<!-- INFORMACIÓN GENERAL -->
+<div class="card border-0">
+    <div class="card-body">
+        <h5 class="govcolor-cobalt mb-3">Información general</h5>
+
+        <h6 class="mb-0">Nombre del indicador:</h6>
+        <p class="mt-0">{{ indicador.nombre }}</p>
+
+        <h6 class="mb-0">Eje:</h6>
+        <p class="mt-0">{{ indicador.eje }}</p>
+
+        <h6 class="mb-0">Objetivo específico:</h6>
+        <p class="mt-0">{{ indicador.objetivoEspecifico }}</p>
+
+        <div *ngIf="indicador.idIndicador==2">
+            <h6 class="mb-0">Acción Estratégica:</h6>
+            <p class="mt-0">{{ indicador.accionEstreategica }}</p>
+        </div>
+
+        <h6 class="mb-0">Tipo Indicador:</h6>
+        <p class="mt-0">{{ indicador.tipoIndicador }}</p>
+
+    </div>
+</div>
+
+<!-- TABS -->
+<div class="mt-4">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)"
+                [ngClass]="{ 'active': selectedTab === AvanceIndicadorTabs.AvanceCuantitativo }"
+                (click)="selectTab(AvanceIndicadorTabs.AvanceCuantitativo)">Avance cuantitativo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)"
+                [ngClass]="{ 'active': selectedTab === AvanceIndicadorTabs.AvanceCostos }"
+                (click)="selectTab(AvanceIndicadorTabs.AvanceCostos)">Avance costos</a>
+        </li>
+    </ul>
+
+    <!-- Contenido de las Tabs -->
+    <ng-container *ngIf="selectedTab === AvanceIndicadorTabs.AvanceCuantitativo">
+        <div class="card p-4">
+            <!-- TABLA -->
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6 d-flex flex-row justify-content-end flex-wrap">
+                    <odc-export-excel [columns]="tableConfig.columns" [data]="lstAvancesCuantitativos"
+                        fileName="avance-cuantitativo-indicador.xlsx">
+                    </odc-export-excel>
+                    <button type="button" class="ml-2 btn-govco fill-btn-govco"
+                        (click)="handleNuevoAvanceCuantitativo()">
+                        <span>Registrar nuevo avance</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-2">
+                <odc-table [datosTabla]="lstAvancesCuantitativos" [config]="tableConfig"
+                    (accionClick)="handleAccionClick($event, 1)">
+                </odc-table>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="selectedTab === AvanceIndicadorTabs.AvanceCostos">
+        <div class="card p-4">
+            <!-- TABLA -->
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6 d-flex flex-row justify-content-end flex-wrap">
+                    <odc-export-excel [columns]="tableConfig.columns" [data]="lstAvanceCostos"
+                        fileName="avance-cuantitativo-indicador.xlsx">
+                    </odc-export-excel>
+                    <button type="button" class="ml-2 btn-govco fill-btn-govco" (click)="handleNuevoAvanceCostos()">
+                        <span>Registrar nuevo avance</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-2">
+                <odc-table [datosTabla]="lstAvanceCostos" [config]="tableConfig"
+                    (accionClick)="handleAccionClick($event, 2)">
+                </odc-table>
+            </div>
+        </div>
+    </ng-container>
+</div>

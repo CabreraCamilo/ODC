@@ -1,0 +1,28 @@
+.mr-2 {
+    margin-right: 0.5rem;
+}
+
+.ml-2 {
+    margin-left: 0.5rem;
+}
+
+.card {
+    border: none !important;
+    border-top-left-radius: 0 !important;
+}
+
+.nav-tabs .nav-link {
+    border-radius: none !important;
+    border: none !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.nav-link {
+    background-color: var(--govcolor-matterhorn);
+    color: var(--govcolor-white);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--govcolor-cobalt) !important;
+}

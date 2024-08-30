@@ -1,0 +1,44 @@
+<div *ngIf="homeCargado" class="container">
+    <app-carrusel [gestionComponte]="gestionComponte"></app-carrusel>
+  
+    <div class="row mt-4">
+      <nav class="navbar-expand-lg navbar-pestana-govco">
+        <div class="navbar-collapse">
+          <ul class="navbar-nav">
+            <li *ngFor="let pestana of pestanas; let i = index" class="nav-item" [id]="'pestania' + (i + 1)">
+              <a [id]="'pest' + (i + 1)" class="nav-link govco-bg-cobalt" href="javascript:void(0)"
+                (click)="seleccionarPestana(i)">
+                <p [id]="'letrapest' + (i + 1)">{{ pestana.nombre }}</p>
+              </a>
+              <hr [id]="'hr' + (i + 1)" [ngClass]="{
+                      'clase-uno': !pestana.seleccionada,
+                      'clase-dos': pestana.seleccionada
+                    }" style="color:transparent;" />
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  
+    <div class="content mt-4">
+      <ng-container *ngIf="pestanas[0].seleccionada">
+        <app-inicio></app-inicio>
+      </ng-container>
+      <ng-container *ngIf="pestanas[1].seleccionada">
+        <app-oxigeno></app-oxigeno>
+      </ng-container>
+      <ng-container *ngIf="pestanas[2].seleccionada">
+        <app-asfixia></app-asfixia>
+      </ng-container>
+      <ng-container *ngIf="pestanas[3].seleccionada">
+        <app-ejes-tejedores></app-ejes-tejedores>
+      </ng-container>
+      <ng-container *ngIf="pestanas[4].seleccionada">
+        <app-plan-accion></app-plan-accion>
+      </ng-container>
+      <ng-container *ngIf="pestanas[5].seleccionada">
+        <app-formulacion></app-formulacion>
+      </ng-container>
+    </div>
+  
+  </div>

@@ -1,0 +1,126 @@
+
+
+<!-- TABLA PRINCIPAL -->
+<ng-container *ngIf="!showAvanceIndicador">
+    <!-- TITULO -->
+    <div class="d-flex flex-column pt-2">
+        <h3 class="govcolor-cobalt text-center">
+            {{ messagesComponent.headerTitle }}
+        </h3>
+    </div>
+
+    <!-- FILTRO DE BÚSQUEDA -->
+    <div class="card border-0">
+        <div class="card-body">
+            <form [formGroup]="filterForm">
+                <div class="row">
+                    <!-- CAMPO DE BÚSQUEDA PARA EJE -->
+                    <div class="col-6">
+                        <frm-odc-dropdown
+                            label="Eje"
+                            [options]="lstEjes"
+                            [placeholder]="'Escoger'"
+                            [selectedOption]="selectEje"
+                            idKey="id"
+                            nameKey="name"
+                            (selectionChange)="selectEje($event)">
+                        </frm-odc-dropdown>
+                    </div>
+
+                    <!-- CAMPO DE BÚSQUEDA PARA OBJETIVO ESPECIFICO -->
+                    <div class="col-6">
+                        <frm-odc-dropdown
+                            label="Objetivo Especifico"
+                            [options]="lstObjetivos"
+                            [placeholder]="'Escoger'"
+                            [selectedOption]="selectedObjetivo"
+                            idKey="id"
+                            nameKey="descripcion"
+                            (selectionChange)="selectObjetivo($event)">
+                        </frm-odc-dropdown>
+                        <!-- [control]="objetivoEspecifico"  <= Para cuando se quiere manejar campos requeridos o validaciones-->
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <!-- CAMPO DE BÚSQUEDA PARA TIPO INDICADOR -->
+                    <div class="col-6">
+                        <frm-odc-dropdown
+                            label="Tipo indicador"
+                            [options]="lstTiposIndicadores"
+                            placeholder="Escoger"
+                            [selectedOption]="selectedTipoIndicador"
+                            idKey="id"
+                            nameKey="descripcion"
+                            (selectionChange)="selectTipoIndicador($event)">
+                        </frm-odc-dropdown>
+                    </div>
+
+                    <!-- CAMPO DE BÚSQUEDA PARA NOMBRE -->
+                    <div class="col-6 entradas-de-texto-govco">
+                        <label for="input-nombre">Nombre</label>
+                        <input id="input-nombre" formControlName="nombre" type="text"
+                            placeholder="" />
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <!-- CAMPO DE BÚSQUEDA PARA ENTIDADES RE -->
+                    <div class="col-6">
+                        <frm-odc-dropdown
+                            label="Entidad Responsable"
+                            [options]="lstEntidadesResponsables"
+                            placeholder="Escoger"
+                            [selectedOption]="selectedEntidadResponsable"
+                            idKey="id"
+                            nameKey="descripcion"
+                            (selectionChange)="selectEntidadResponsable($event)">
+                        </frm-odc-dropdown>
+                    </div>
+                </div>
+            </form>
+
+            <div class="d-flex flex-row gap-3 p-3 justify-content-end flex-wrap mt-2">
+                <!-- Botón de texto - Contenido -->
+                <button type="button" class="btn-govco fill-btn-govco" style="width: 165px; height: 42px;" (click)="fetchFilteredData()">
+                    {{ messages.acciones.consultar }}
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <br />
+
+    <!-- TABLA -->
+    <div class="card border-0">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <odc-export-excel 
+                        [columns]="tableConfig.columns" 
+                        [data]="lstIndicadores" 
+                        fileName="indicadores.xlsx">
+                    </odc-export-excel>
+                </div>
+                <div class="col-6 d-flex flex-row justify-content-end flex-wrap">
+                    <odc-bar-search class="col-12" [placeholder]="'Escribe una palabra para buscar'"
+                        (search)="receiveData($event)"></odc-bar-search>
+                </div>
+            </div>
+
+            <div class="mt-0">
+                <odc-table [datosTabla]="lstIndicadores" [config]="tableConfig"
+                    (accionClick)="handleAccionClick($event)">
+                </odc-table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<!-- DETALLE DEL INDICADOR -->
+<ng-container *ngIf="showAvanceIndicador">
+    <app-avance-indicador 
+        [indicador]="selectedIndicador" 
+        (close)="closeAvanceIndicador()">
+    </app-avance-indicador>
+</ng-container>

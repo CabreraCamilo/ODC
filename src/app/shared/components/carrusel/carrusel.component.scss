@@ -1,0 +1,265 @@
+ .carrusel-govco {
+     height: auto;
+     overflow: initial;
+ }
+
+ .carrusel-govco.carousel-fade .carousel-inner {
+     overflow: initial;
+ }
+
+ .carrusel-govco .carousel-indicators {
+     margin-right: 20%;
+     margin-left: 20%;
+     margin-bottom: 1.5rem;
+     z-index: 1;
+ }
+
+ .carrusel-govco .carousel-indicators button {
+     border-radius: 50%;
+     width: 0.65rem;
+     height: 0.65rem;
+     margin: 0.25rem;
+     box-shadow: 0 0.188rem 0.25rem #00000029;
+     background-color: transparent;
+     border: 0.155rem solid #FFFFFF;
+ }
+
+ .carrusel-govco .carousel-indicators button:not(.active) {
+     opacity: 0.6;
+     background-color: transparent;
+ }
+
+ .carrusel-govco .carousel-indicators button:focus-visible {
+     outline: max(0.125rem, 0.063em) solid #000000;
+     outline-offset: max(0.125rem, 0.063rem);
+ }
+
+ .carrusel-govco .carousel-inner .carousel-item {
+     position: relative;
+     visibility: initial;
+     width: 100%;
+     height: auto;
+ }
+
+ .carrusel-govco .carousel-inner .carousel-item>a {
+     display: block;
+ }
+
+ .carrusel-govco .carousel-inner .carousel-item>a:focus-visible {
+     outline-offset: 0.25rem;
+     outline: 0.125rem solid #000000;
+ }
+
+ .carrusel-govco .carousel-inner .carousel-item img {
+     min-height: 19.813rem;
+     width: 100%;
+ }
+
+ .carrusel-govco .carousel-inner .carousel-item:not(.multiple-carrusel-govco) .carousel-caption {
+     top: 28%;
+     bottom: 18%;
+     padding: 0.2rem;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     left: 22%;
+     right: 22%;
+     overflow: hidden;
+ }
+
+ .carrusel-govco .carousel-inner .carousel-caption a:focus-visible {
+     outline: 0.125rem solid #000000;
+ }
+
+ .carrusel-govco .carousel-inner .carousel-caption a {
+     text-decoration: none;
+     height: auto;
+     max-height: 95%;
+     overflow: hidden;
+ }
+
+ .carrusel-govco .carousel-inner .carousel-caption h5,
+ .carrusel-govco .carousel-inner .carousel-caption p {
+     color: #FFFFFF;
+     max-width: 23.063rem;
+     display: block;
+     margin-bottom: 0.5rem;
+ }
+
+ .carrusel-govco .carousel-inner .carousel-caption h5 {
+     font-size: 2.125rem;
+     font-family: Nunito_Sans-Bold;
+ }
+
+ .carrusel-govco .carousel-inner .carousel-caption p {
+     font-size: 1.625em;
+     font-family: Nunito_Sans-Bold;
+ }
+
+ .carrusel-govco .control-start-pause {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     margin-left: 7%;
+     margin-bottom: 1.5rem;
+     line-height: 0;
+     z-index: 1;
+ }
+
+ .carrusel-govco .control-start-pause button {
+     background-color: inherit;
+     border: 0;
+     color: #FFFFFF;
+     font-size: 0.875rem;
+     font-family: 'Verdana-Regular';
+     cursor: pointer;
+     line-height: 1rem;
+     padding: 0.5rem 0.5rem;
+     padding-right: 1.25rem;
+     padding-left: 0.75rem;
+ }
+
+ .carrusel-govco .control-start-pause button:not(.active) {
+     display: none;
+ }
+
+ .carrusel-govco .control-start-pause button::before {
+     font-family: "govco-fontv5";
+     font-size: 1.2rem;
+ }
+
+ .carrusel-govco .control-start-pause button.start::before {
+     content: "\e9e0";
+ }
+
+ .carrusel-govco .control-start-pause button.pause::before {
+     content: "\e9c9";
+ }
+
+ .carrusel-govco .control-start-pause button:focus-visible {
+     outline: 0.125rem solid #000000;
+     -moz-border-radius: 0 6.25rem 6.25rem 6.25rem;
+     -webkit-border-radius: 0 6.25rem 6.25rem 6.25rem;
+     border-radius: 6.25rem 6.25rem 6.25rem 6.25rem;
+     color: #000000;
+ }
+
+ .carrusel-govco .control-start-pause button:hover {
+     color: #817e7ef0;
+ }
+
+ .carrusel-govco .control-start-pause button span {
+     margin-left: 0.5rem;
+     text-decoration: underline;
+ }
+
+ .carrusel-govco .carousel-control-prev,
+ .carrusel-govco .carousel-control-next {
+     top: 40%;
+     bottom: 40%;
+     opacity: 1;
+     width: 25%;
+ }
+
+ .carrusel-govco .carousel-control-next:focus-visible,
+ .carrusel-govco .carousel-control-prev:focus-visible {
+     outline: none;
+ }
+
+ .carrusel-govco .carousel-control-prev-icon,
+ .carrusel-govco .carousel-control-next-icon {
+     background-image: none;
+     width: auto;
+     height: auto;
+ }
+
+ .carrusel-govco .carousel-control-prev-icon::after,
+ .carrusel-govco .carousel-control-next-icon::after {
+     font-family: "govco-fontv5";
+     font-size: 2.625rem;
+     color: #FFFFFF;
+ }
+
+ .carrusel-govco .carousel-control-prev-icon::after {
+     content: '\e813';
+ }
+
+ .carrusel-govco .carousel-control-next-icon::after {
+     content: '\e814';
+ }
+
+ .carrusel-govco .carousel-control-prev:hover .carousel-control-prev-icon::after,
+ .carrusel-govco .carousel-control-next:hover .carousel-control-next-icon::after {
+     color: #000000;
+ }
+
+ .carrusel-govco>button:focus {
+     background-color: transparent;
+ }
+
+ .carrusel-govco .carousel-control-prev:focus-visible .carousel-control-prev-icon::after,
+ .carrusel-govco .carousel-control-next:focus-visible .carousel-control-next-icon::after {
+     border: 0.125rem solid #000000;
+     color: #000000;
+ }
+
+ /* Responsive */
+ .responsive-carrusel-govco .carousel-indicators,
+ .responsive-carrusel-govco .control-start-pause {
+     margin-bottom: 1rem;
+ }
+
+ .responsive-carrusel-govco .carousel-indicators button {
+     width: 0.5rem;
+     height: 0.5rem;
+     margin: 0.125rem;
+ }
+
+ .responsive-carrusel-govco .carousel-control-prev-icon::after,
+ .responsive-carrusel-govco .carousel-control-next-icon::after {
+     font-size: 2rem;
+ }
+
+ .responsive-carrusel-govco .carousel-inner .carousel-item img {
+     min-height: 13.5rem;
+ }
+
+ .responsive-carrusel-govco .carousel-inner .carousel-caption {
+     left: 15%;
+     right: 15%;
+ }
+
+ .responsive-carrusel-govco .carousel-inner .carousel-item:not(.multiple-carrusel-govco) .carousel-caption {
+     top: 20%;
+     bottom: 21%;
+ }
+
+ .responsive-carrusel-govco .carousel-inner .carousel-caption h5 {
+     font-size: 1.25rem;
+     color: #FFFFFF;
+     font-family: Nunito_Sans-Bold;
+ }
+
+ .responsive-carrusel-govco .carousel-inner .carousel-caption p {
+     font-size: 1.125rem;
+ }
+
+ .responsive-carrusel-govco .control-start-pause button span {
+     margin-left: 0.25rem;
+ }
+
+ @media only screen and (min-width: 1400px) {
+     .carrusel-govco .carousel-inner .carousel-item:not(.multiple-carrusel-govco) .carousel-caption {
+         top: 35%;
+         bottom: 19%;
+         left: 27%;
+         right: 27%;
+     }
+ }
+
+ @media (max-width: 1700px) {
+     .carrusel-govco .carousel-inner .carousel-item:not(.multiple-carrusel-govco) .carousel-caption {
+         max-height: 11.875rem;
+     }
+ }

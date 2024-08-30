@@ -1,0 +1,88 @@
+<div class="modal-content modal-content-govco" *ngIf="verDialogo">
+    <div class="modal-header modal-header-govco">
+      <a href="javascript:void(0)" class="close-btn-modal" aria-label="Close" (click)="closeModal()">
+        <span class="modal-close-govco govco-times"></span>
+      </a>
+    </div>
+    <div class="modal-body modal-body-govco">
+      <h4 class="modal-title-govco">{{ titulo}} </h4>
+      <form [formGroup]="frmAvance">
+        <div class="row mt-4">
+          <div class="col-12">
+            <frm-odc-dropdown label="Mes del periodo*" [options]="lstMeses" [placeholder]="'Escoger'"
+              [selectedOption]="selectedMes" idKey="id" nameKey="descripcion" [control]="mesPeriodo"
+              (selectionChange)="selectMes($event)">
+            </frm-odc-dropdown>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12">
+            <frm-odc-dropdown label="Año del periodo*" [options]="lstAnios" [placeholder]="'Escoger'"
+              [selectedOption]="selectedAnio" idKey="id" nameKey="descripcion" [control]="anioPeriodo"
+              (selectionChange)="selectAnio($event)">
+            </frm-odc-dropdown>
+          </div>
+        </div>
+        <!-- CAMPO NOMBRE -->
+        <div class="row mt-4" *ngIf="!this.data.AvanceCostos">
+          <div class="entradas-de-texto-govco">
+            <label for="input-nombre-id">Avance del periodo*</label>
+            <div class="input-container">
+              <input id="input-nombre-id" type="text"
+                [attr.aria-invalid]="avance?.invalid && (avance?.dirty || avance?.touched)"
+                aria-describedby="campoNombre-id" formControlName="avance" />
+  
+              <span *ngIf="avance?.valid" class="govco-svg govco-check-circle success" aria-label="Válido"
+                aria-hidden="true"></span>
+              <span *ngIf="avance?.invalid && (avance?.dirty || avance?.touched)"
+                class="govco-svg govco-exclamation-circle error" aria-label="Inválido" aria-hidden="true"></span>
+            </div>
+  
+            <!-- Uso del componente de mensajes de error -->
+            <odc-form-error-messages [control]="avance"></odc-form-error-messages>
+          </div>
+        </div>
+  
+        <div class="row mt-4" *ngIf="this.data.AvanceCostos">
+          <div class="entradas-de-texto-govco">
+            <label for="input-nombre-id">Recurso Ejecutado*</label>
+            <div class="input-container">
+              <input id="input-nombre-id" type="text"
+                [attr.aria-invalid]="recurso?.invalid && (recurso?.dirty || recurso?.touched)"
+                aria-describedby="campoNombre-id" formControlName="recurso" />
+  
+              <span *ngIf="recurso?.valid" class="govco-svg govco-check-circle success" aria-label="Válido"
+                aria-hidden="true"></span>
+              <span *ngIf="recurso?.invalid && (recurso?.dirty || recurso?.touched)"
+                class="govco-svg govco-exclamation-circle error" aria-label="Inválido" aria-hidden="true"></span>
+            </div>
+  
+            <!-- Uso del componente de mensajes de error -->
+            <odc-form-error-messages [control]="recurso"></odc-form-error-messages>
+          </div>
+        </div>
+  
+        <div class="row mt-4">
+          <div class="entradas-de-texto-govco">
+            <label for="input-descripcion-id">Descripcion*</label>
+            <div class="input-container">
+              <textarea id="textarea-descripcion-id" class="col-12" rows="5"
+                [ngClass]="{'is-invalid': descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)}"
+                aria-describedby="descripcion-id" formControlName="descripcion">
+                  </textarea>
+            </div>
+            <!-- Uso del componente de mensajes de error -->
+            <odc-form-error-messages [control]="descripcion"></odc-form-error-messages>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer-govco mt-4">
+      <div class="modal-buttons-govco">
+        <button type="button" class="btn btn-primary btn-modal-govco" (click)="saveModal()">{{ messages.acciones.aceptar
+          }}</button>
+        <button type="button" class="btn btn-primary btn-modal-govco btn-contorno" (click)="closeModal()">{{
+          messages.acciones.cancelar }}</button>
+      </div>
+    </div>
+  </div>

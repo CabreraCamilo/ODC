@@ -1,0 +1,33 @@
+<!-- Alerta Modal - Confirmación -->
+<div class="container-modal-govco">
+    <div class="modal-container-govco" tabindex="-1" aria-hidden="true" role="dialog">
+      <div class="modal-dialog modal-dialog-govco">
+        <div class="modal-content modal-content-govco" style="box-shadow: none;">
+          
+          <!-- Header del Modal -->
+          <div class="modal-header modal-header-govco modal-header-alerts-govco">
+            <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="closeModal()"></button>
+          </div>
+          
+          <!-- Cuerpo del Modal -->
+          <div class="modal-body modal-body-govco center-elements-govco">
+            <div class="modal-icon">
+              <span class="govco-icon govco-info-circle"></span>
+            </div>
+            <h3 class="modal-title-govco confirmation-govco">{{ config.title }}</h3>
+            <h3 *ngIf="config.subtitle" class="modal-subtitle-govco modal-text-center-govco">{{ config.subtitle }}</h3>
+            <p class="modal-text-govco">
+              {{ config.content }}
+            </p>
+          </div>
+          
+          <!-- Footer del Modal -->
+          <div *ngIf="config.buttons" class="modal-footer-govco modal-footer-alerts-govco" [class.mx-auto]="config.buttons.length < 2">
+            <div class="modal-buttons-govco">
+              <button *ngFor="let button of config.buttons" type="button" class="btn btn-modal-govco" [ngClass]="button.className || 'btn-primary'" (click)="button.onClick ? button.onClick() : null; closeModal()">{{ button.text }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

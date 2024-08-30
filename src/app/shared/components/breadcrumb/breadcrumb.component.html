@@ -1,0 +1,16 @@
+<nav class="breadcrumb-nav-govco mt-1" aria-label="breadcrumb">
+    <ul class="breadcrumb-govco">
+      <li 
+        *ngFor="let breadcrumb of breadcrumbs; let i = index"
+        class="breadcrumb-item-govco"
+        [class.active]="isLast(i)"
+        [attr.aria-current]="isLast(i) ? 'page' : null">
+        <ng-container *ngIf="!isLast(i)">
+          <a [href]="breadcrumb.url">{{ breadcrumb.label }}</a>
+        </ng-container>
+        <ng-container *ngIf="isLast(i)">
+          {{ breadcrumb.label }}
+        </ng-container>
+      </li>
+    </ul>
+  </nav>

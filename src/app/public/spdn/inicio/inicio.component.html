@@ -1,0 +1,109 @@
+<div class="content-tab">
+    <h3 class="govcolor-cobalt text-center">Política Nacional de Drogas 2023 - 2033</h3>
+    <h3 class="govcolor-cobalt text-center">"De la guerra contra las Drogas al Cuidado de la Vida"</h3>
+    <p class="">
+        Bienvenidos a la <strong>Política Nacional de Drogas 2023-2033: "Sembrando vida, desterraremos el
+            narcotráfico"</strong>, que atiende lo establecido en el <strong>artículo 193 de la Ley 2294 de
+            2023</strong> que promulgó el Plan Nacional de Desarrollo 2022 – 2026, el Gobierno Nacional ha gestado
+        esta
+        visión transformadora.
+    </p>
+    <p class="">
+        Nuestra política surge de un proceso inclusivo y participativo, en el que diversas entidades estatales,
+        actores
+        de la sociedad civil, y valientes comunidades campesinas han aportado su voz. Desde esta base sólida, el
+        país se
+        compromete a poner en práctica un enfoque centrado en el cuidado de la vida y el medio ambiente. Esta nueva
+        visión se enfoca en los derechos humanos, la salud pública, y la consolidación de la paz.
+    </p>
+    <p class="">
+        Por un lado, proporcionaremos <strong>"OXÍGENO"</strong> a los territorios, comunidades, individuos y
+        ecosistemas que han
+        padecido desproporcionadamente la guerra contra las drogas. Por otro lado, ejecutaremos acciones que generen
+        <strong>"ASFIXIA"</strong> a los nodos estratégicos del sistema criminal, que son quienes generan violencia y se
+        lucran en
+        mayor
+        proporción de esta economía ilícita.
+    </p>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="separator-govco">
+                <h2 class="govcolor-cobalt separator-title-govco">LANZAMIENTO POLÍTICA DE DROGAS
+                    <hr>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card-body">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img/Fotos.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="card-body">
+                <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img/Video.jpg"
+                    class="img-fluid" alt="Responsive image">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="separator-govco">
+                <h2 class="govcolor-cobalt separator-title-govco">DOCUMENTOS
+                    <hr>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row scrollable-content">
+        <div *ngFor="let item of cardsDocumentos; cardsDocumentos" class="col-6">
+            <app-tarjetas [gestionComponte]="item"></app-tarjetas>
+            <br>
+        </div>
+    </div>
+    <br>
+    <div class="row m-1 tarjeta-govco blockquote-customPND">
+        <h3 class="mt-3 govcolor-tulip text-center">“</h3>
+        <p>"Sembrar la vida y desterrar al narcotráfico es también una invitación a repensar el fenómeno de las
+            drogas, cuestionando las narrativas estigmatizantes, explorando las posibilidades que abren los usos
+            alternativos de las plantas, y dando pasos hacía la regulación justa y responsable los usos no
+            psicoactivos de la planta de coca y el cannabis de uso adulto. Es decir, entender que las plantas
+            que habían sido usadas para la guerra ahora serán aliadas en la construcción de la paz grande. Lo
+            anterior no implica una renuncia por parte del Estado a perseguir la producción de cocaína, sino la
+            búsqueda de alternativas más humanas y sostenibles."</p>
+        <h3 class=" mb-3 govcolor-tulip text-center">”</h3>
+
+    </div>
+
+    <div class="row mt-1">
+        <div class="col-4"><app-tarjetas [gestionComponte]="enfoque" (tarjetaClick)="escucharTarjeta(1)"></app-tarjetas>
+        </div>
+        <div class="col-4"><app-tarjetas [gestionComponte]="principios"
+                (tarjetaClick)="escucharTarjeta(2)"></app-tarjetas></div>
+        <div class="col-4"><app-tarjetas [gestionComponte]="politicasPublicas"
+                (tarjetaClick)="escucharTarjeta(3)"></app-tarjetas></div>
+    </div>
+    <hr>
+    <div class="row mt-1">
+        <div class="col-12" *ngIf="tarjetaSeleccionada==1">
+            <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/Enfoques.png"
+                alt="enfoque" class="img-fluid">
+        </div>
+        <div class="col-12" *ngIf="tarjetaSeleccionada==2">
+            <img src="https://www.minjusticia.gov.co/programas-co/ODC/Documents/Politica-Drogas/img-/EnfoqueTerritorial.png"
+                alt="enfoque" class="img-fluid">
+        </div>
+        <div class="col-12" *ngIf="tarjetaSeleccionada==3">
+            ...
+        </div>
+    </div>
+
+
+</div>

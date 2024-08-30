@@ -1,0 +1,15 @@
+.welcome-container {
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente al centro si los elementos tienen diferente altura */
+
+    h2 {
+        margin-right: 10px;
+        /* Añade un margen entre el h2 y el p */
+    }
+
+    p {
+        margin-bottom: 0rem !important;
+    }
+
+}

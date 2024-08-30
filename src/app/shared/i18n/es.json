@@ -1,0 +1,77 @@
+{
+  "indicadores":{
+    "headerTitle": "Consultar indicadores a registrar por entidad",
+    "tableTitle": "Lista de indicadores por entidad.",
+    "tableHeader": {
+      "nombreOpcion": "Indicadores",
+      "id": "ID",
+      "eje": "Eje",
+      "objetivoEspecifico": "Objetivo específico",
+      "tipoIndicador": "Tipo indicador",
+      "nombre": "Nombre",
+      "entidadResponsable": "Entidad responsable",
+      "ultimoPeriodoReportado": "Último periodo reportado",
+      "opciones": "Opciones"
+    },
+    "activarProyectoAlert":{
+      "title": "Activar proyecto",
+      "content": "¿Está seguro que desea activar el proyecto?"
+    },
+    "desactivarProyectoAlert":{
+      "title": "Desactivar proyecto",
+      "content": "¿Está seguro que desea inactivar el proyecto?"
+    }
+  },
+  "avanceIndicadores": {
+    "title": "Registrar avance en indicador",
+    "modalCuantitativoNuevoTitle": "Agregar avance cuantitativo",
+    "modalCuantitativoEditarTitle": "Editar avance cuantitativo",
+    "modalAvanceCostosNuevoTitle": "Agregar avance costos",
+    "modalAvanceCostosEditarTitle": "Editar avance costos",
+    "tableHeaderCuantitativos": {
+      "nombreOpcion": "Indicadores",
+      "entidad": "Entidad",
+      "usuario": "Usuario",
+      "meta": "Meta",
+      "observacion": "Observación",
+      "fechaEnvio": "Fecha de envío",
+      "periodoReportado": "Periodo reportado",
+      "avanceReportado": "Avance reportado",
+      "descripcionAvance": "Descripción avance",
+      "estado": "Estado",
+      "opciones": "Opciones"
+    }
+  },
+  "planAccion": {
+    "headerTitle": "Cargar plan de acción"
+  },
+  "entidades": {
+    "headerTitle": "Administración de entidades",
+    "headerDescription": "En esta pantalla puede configurar las entidades que se van a listar en la pestaña de parametrización de la plantilla de cargue del plan de acción, se debe tener en cuenta que solo los ítems en estado activo se listarán en la plantilla de cargue",
+    "tableHeader": {
+      "nombreOpcion": "ListaEntidades",
+      "id": "ID",
+      "codigo": "Código",
+      "descripcion": "Descripción",
+      "activar": "Activar"
+    }
+  },
+  "erroresGenerales": {
+    "errorGuardarTitle": "Error al guardar",
+    "errorGuardarContent": "Se presentó un error al intentar guardar.",
+    "errorObtenerDatosTitle": "Error al obtener datos",
+    "errorObtenerDatosContent": "Se presentó un error al intentar obtener los datos.",
+    "errorExportarExcelTitle": "Error al exportar datos"
+  },
+  "acciones": {
+    "aceptar": "Aceptar",
+    "modificar": "Modificar",
+    "cancelar": "Cancelar",
+    "enviar": "Enviar",
+    "activar": "Activar",
+    "inactivar": "Inactivar",
+    "consultar": "Consultar",
+    "si": "Si",
+    "no": "No"
+  }
+}

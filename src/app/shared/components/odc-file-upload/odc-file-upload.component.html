@@ -1,0 +1,45 @@
+<!-- CARGA DEL ARCHIVO -->
+<div *ngIf="!fileSaved" class="loader-carga-archivo-govco d-flex justify-content-center">
+    <div class="all-input-carga-archivo-govco">
+        <input type="file" id="inputFile" name="inputFile" class="input-carga-archivo-govco"
+            [class.active]="!inputFileDisabled" (change)="onFileSelect($event)" [disabled]="inputFileDisabled"
+            [multiple]="false" />
+        <label for="inputFile" class="label-carga-archivo-govco">Selección de archivo</label>
+        <label for="inputFile" class="container-input-carga-archivo-govco">
+            <span class="button-file-carga-archivo-govco">Seleccionar archivo</span>
+            <span class="file-name-carga-archivo-govco">{{ selectedFileName || 'Sin archivo seleccionado' }}</span>
+        </label>
+        <span class="text-validation-carga-archivo-govco">
+            <span>Archivo en formato Excel.</span>
+            <span>Peso máximo: {{ (config.validSize/1024)/1024 }} MB</span>
+        </span>
+    </div>
+
+    <div class="load-button-carga-archivo-govco">
+        <div class="load-carga-archivo-spdn">
+            <div *ngIf="loading" class="spinner-indicador-de-carga-govco">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+        </div>
+        <button class="button-loader-carga-archivo-govco" [class.inactive]="!canUpload" (click)="uploadFiles()"
+            [disabled]="!canUpload">
+            Cargar archivo
+        </button>
+    </div>
+</div>
+
+<!-- LISTA ARCHIVO -->
+<div class="d-flex justify-content-center">
+    <ng-container *ngFor="let file of uploadedFiles; let i = index">
+        <div class="attached-file-carga-archivo-govco">
+            <div class="icon-text-carga-archivo-govco">
+                <div class="file-alt-carga-archivo-govco govco-icon govco-file-alt"></div>
+                <div class="container-text-name-carga-archivo-govco">
+                    <span class="text-name-carga-archivo-govco">{{ file.name }}</span>
+                    <span>{{ file.size | fileSize }}</span>
+                </div>
+            </div>
+            <button class="trash-alt-1-carga-archivo-govco govco-icon govco-trash" (click)="removeFile(file)"></button>
+        </div>
+    </ng-container>
+</div>
